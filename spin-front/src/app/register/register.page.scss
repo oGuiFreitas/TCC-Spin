@@ -1,0 +1,87 @@
+// propriedade ion-background-color abaixo só funciona usada em rgb
+ion-app {
+    --ion-background-color: rgb(240, 240, 240);
+    justify-content: center;
+   
+  }
+  ion-content{
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .containerElementosInpEbt {
+    margin: 20px;
+    height: auto;
+
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 70px;
+  }
+  
+  .logo img {
+    width: 160px;
+    height: 240px;
+  }
+  
+//   ion-toolbar {
+   
+//   }
+  ion-header{
+    box-shadow: none;
+  }
+  ion-iten {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
+  .label {
+    margin-bottom: 40px;
+    padding: 0px;
+    color: #888888;
+    font-size: 16px;
+  }
+  
+  .input {
+    // alterando a cor da borda ,só pega estando na mesma linha comando unico
+    border: 1px solid #888888;
+    border-radius: 15px;
+    height: 15px;
+    margin-top: 4px;
+    margin-bottom: 30px;
+    --border-radius: 15px;
+    --border-width: 0px;
+    min-height: 50px;
+  }
+  .btEntrar {
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    color:#ffffff;
+    background-color: #5F2587;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: none;
+    margin-top: 25px;
+  }
+  ion-icon{
+    color:#5F2587;
+  }
+  .btVoltar{
+   width: 60px;
+    
+  }
+
+  ion-text{
+    font-size: 24px;
+    font-weight: bold;
+
+  }
+  .containerTextoCriarC{
+    margin-bottom: 25px;
+  }
+  

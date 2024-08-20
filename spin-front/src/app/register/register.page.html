@@ -1,13 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<!-- container principal de toda aplicação -->
+<ion-app>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+      <ion-button
+        class="btVoltar"
+        expand="block"
+        fill="clear"
+        routerLink="/login"
+        ><ion-icon name="arrow-back" size="large"></ion-icon
+      ></ion-button>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+
+  <ion-content>
+    <div class="logo"></div>
+
+    <div class="containerElementosInpEbt">
+      <div class="containerTextoCriarC">
+        <ion-text>Complete os dados para criar sua <br>conta</ion-text>
+      </div>
+
+      <!-- email -->
+      <ion-label class="label" position="stacked">E-mail</ion-label>
+      <ion-input fill="outline" class="input" type="email"></ion-input>
+
+      <!-- nome -->
+      <ion-label class="label" position="stacked">Nome</ion-label>
+      <ion-input fill="outline" class="input" type="text"></ion-input>
+      <!-- sobrenome -->
+      <ion-label class="label" position="stacked">Sobrenome</ion-label>
+      <ion-input fill="outline" class="input" type="text"></ion-input>
+
+      <!--senha -->
+      <ion-label class="label" position="floating">Senha</ion-label>
+      <ion-input fill="outline" class="input" type="password"></ion-input>
+      <!--telefone -->
+      <ion-label class="label" position="stacked">Telefone</ion-label>
+      <ion-input fill="outline" class="input" type="tel"></ion-input>
+
+
+      <ion-button class="btEntrar" fill="clear" type="submit"
+        >Continuar</ion-button
+      >
+    </div>
+  </ion-content>
+</ion-app>
