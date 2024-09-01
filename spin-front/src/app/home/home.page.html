@@ -1,20 +1,118 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-menu contentId="main-content" class="corFundoSideBar">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-header class="ion-no-border" >
+
+      <ion-toolbar  class="containerLogoeTexto">
+        <img src="assets/logoEtexto.svg" class="configImgLogo" />
+      </ion-toolbar>
+
+    </ion-header>
+    
+    <ion-content class="ion-padding">
+
+      <ion-buttons>
+        <ion-button  style="background-color:#5F2587" fill="clear"class="configBotao">
+          <ion-text class="textoBt">
+
+           
+            <img src="assets/home.svg" />
+            <ion-text style="margin-left: 6px;">
+              Inicio
+            </ion-text>
+          </ion-text>
+        </ion-button>
+      </ion-buttons>
+      
+
+      <ion-buttons>
+        <ion-button fill="clear"class="configBotao">
+          <ion-text class="textoBt">
+            <ion-icon name="home-outline" class="configIcone"> </ion-icon>
+            <ion-text style="margin-left: 6px;">
+              Buscar
+            </ion-text>
+          </ion-text>
+        </ion-button>
+      </ion-buttons>
+        
+      <ion-buttons>
+        <ion-button fill="clear"class="configBotao">
+          <ion-text class="textoBt">
+            <ion-icon name="home-outline" class="configIcone"> </ion-icon>
+            <ion-text style="margin-left: 6px;">
+              Trocas
+            </ion-text>
+          </ion-text>
+        </ion-button>
+      </ion-buttons> 
+    
+    
+
+      <ion-buttons>
+        <ion-button fill="clear"class="configBotao">
+          <ion-text class="textoBt">
+            <ion-icon name="home-outline" class="configIcone"> </ion-icon>
+            <ion-text style="margin-left: 6px;">
+              Favoritos
+            </ion-text>
+          </ion-text>
+        </ion-button>
+      </ion-buttons>
+    </ion-content>
+
+    
+
+
+
+  </ion-menu>
+
+
+
+
+  
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-searchbar></ion-searchbar>
+
+      </ion-toolbar>
+
+    </ion-header>
+
+
+
+    <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+
+
+    <!-- botoes barra -->
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="play-circle"></ion-icon>
+          Listen Now
+        </ion-tab-button>
+        <ion-tab-button tab="radio">
+          <ion-icon name="radio"></ion-icon>
+          Radio
+        </ion-tab-button>
+        <ion-tab-button tab="library">
+          <ion-icon name="library"></ion-icon>
+          Library
+        </ion-tab-button>
+        <ion-tab-button tab="search">
+          <ion-icon name="search"></ion-icon>
+          Search
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
   </div>
-</ion-content>
+
+
+</ion-app>
