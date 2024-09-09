@@ -1,0 +1,25 @@
+<!-- container principal de toda aplicação -->
+<ion-app>
+  <ion-content>
+    <div class="logo">
+      <img src="assets/logoSpin.svg" alt="Spin Logo" />
+    </div>
+
+    <div class="containerElementosInpEbt" >
+     
+      <ion-label class="label" position="stacked">E-mail</ion-label>
+
+      <ion-input fill="outline" class="input" type="email"></ion-input>
+   
+
+      <ion-label class="label" position="floating">Senha</ion-label>
+      <ion-input fill="outline" class="input" type="password"></ion-input>
+
+      <ion-button class="btEntrar"  fill="clear"type="submit">Entrar</ion-button>
+
+      <ion-button class="btCriarC" expand="block" fill="clear" routerLink="/register"
+        >Criar conta</ion-button
+      >
+    </div>
+  </ion-content>
+</ion-app>
