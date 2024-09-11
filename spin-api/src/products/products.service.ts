@@ -1,59 +1,72 @@
 import { Injectable, HttpException } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { Produtc } from "src/schemas/product.schema";
-import { ProductDTO } from "./dto/product.dto";
-import { Query } from 'express-serve-static-core'
 import mongoose from 'mongoose';
-
-const versionStatus = { __v: false }
-
-const isValid = (id: string) => {
-    let isValid = mongoose.Types.ObjectId.isValid(id);
-    if (!isValid) throw new HttpException('Product not found', 404);
-}
+import { ProductDto } from "./dto/product.dto";
+import { UpdateProductDto } from "./dto/updateProduct.dto";
+import { Produtc } from "src/schemas/product.schema";
+import { User } from "src/schemas/user.schema";
+import { isValidId } from "src/utils/validatorId";
 
 @Injectable()
 export class ProdutcsService {
 
     constructor(
-        @InjectModel(Produtc.name) private productModel: Model<Produtc>) {
+        @InjectModel(Produtc.name) private productModel: Model<Produtc>,
+        @InjectModel(User.name) private userModel: Model<User>) {
     }
 
-    createProduct(createProductDTO: ProductDTO) {
-        const newProduct = new this.productModel(createProductDTO)
-        return newProduct.save()
+    async createProduct(createProductDto : ProductDto) {
+        isValidId(createProductDto.userId, 'userId')
+        const findUser = await this.userModel.findById(createProductDto.userId)
+        if (!findUser) throw new HttpException('User not found', 404);
+
+        const newProduct = new this.productModel(createProductDto)
+        const savedProduct = await newProduct.save();
+        await findUser.updateOne({
+            $push: {
+                myProducts: savedProduct._id,
+            },
+        })
+        return savedProduct
     }
 
-    async getAllProducts(query: Query) {
-        const s = query.s ? {
-            title: {
-                $regex: query.s,
-                $options: 'i',
-            }
-        }: {};
-
-        return await this.productModel.find({...s}, versionStatus)
+    async getAllProducts() {
+        return await this.productModel.find()
     }
 
     async getProductById(id: string): Promise<Produtc> {
-        isValid(id)
-        const findProduct = await this.productModel.findById(id, versionStatus);
+        isValidId(id,'productId')
+        const findProduct = await this.productModel.findById(id);
         if (!findProduct) throw new HttpException('Product not found', 404);
         return findProduct
     }
 
-    async updateProduct(id: string, updateProductData: ProductDTO): Promise<Produtc> {
-        isValid(id)
-        await this.productModel.replaceOne({ _id: id }, updateProductData)
-        return await this.productModel.findById(id,)
+    async updateProduct(id: string, updateProductData: UpdateProductDto): Promise<Produtc> {
+        isValidId(id,'productId')
+        const updateProduct = await this.productModel.findByIdAndUpdate({ _id: id }, updateProductData)
+        if (!updateProduct) throw new HttpException('Product not found', 404);
+        return updateProduct
     }
-    async deleteProduct(id: string): Promise<Produtc> {
-        isValid(id)
-        const findProduct = await this.productModel.findByIdAndDelete(id, versionStatus);
+
+    async deleteProduct(id: string) {
+        isValidId(id,'productId')
+        const findProduct = await this.productModel.findByIdAndDelete(id);
         if (!findProduct) throw new HttpException('Product not found', 404);
-        return findProduct
+        return 'deletado';
     }
-
-
 }
+
+// async createProduct({ subtitle, ...createProductDto }:ProductDto) {
+//     if(subtitle){
+//         const newSubtitle = new this.subtitleModel(subtitle);
+//         const savedNewSubtitle = await newSubtitle.save();
+//         const newProduct = new this.productModel({
+//             ...createProductDto,
+//             subtitle: savedNewSubtitle.id,
+//         });
+//         return newProduct.save()
+//     }
+//     const newProduct = new this.productModel(createProductDto)
+//     return newProduct.save()
+// }

@@ -1,41 +1,40 @@
 import { Type } from "class-transformer";
-import { IsString, IsNotEmpty, MinLength, MaxLength, ArrayMinSize } from "class-validator";
+import { IsString, IsNotEmpty, IsArray, IsOptional, ValidateNested } from "class-validator";
+import { TradeDto } from "src/trade/dto/trade.dto";
 
-export class ProductDTO {
+export class ProductDto {
 
     @IsNotEmpty()
     @IsString()
-    @MinLength(2)
-    @MaxLength(50)
-    private readonly title: string;
-       
+    readonly title: string;
+
+    @IsNotEmpty()
+    @IsArray()
+    readonly subtitle: string[];
+
+    @IsNotEmpty()
+    @IsArray()
+    readonly category: string[];
+
+    @IsNotEmpty()
+    @IsString()
+    readonly userId: string;
+
+    @IsNotEmpty()
+    @IsString()
+    readonly thumbnail: string;
+
+    @IsNotEmpty()
+    @IsString()
+    readonly description: string;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => TradeDto)
+    readonly tradeProposals: string
+
+    @IsOptional()
+    @ValidateNested()
+    readonly urlPhotos: string[]
+
 }
-
-
-// ///
-//     @IsNotEmpty()
-//     @IsString()
-//     @MinLength(2)
-//     @MaxLength(50)
-//     private readonly brand: string;
-        
-//     @IsNotEmpty()
-//     @ArrayMinSize(2)
-//     @MaxLength(20, {
-//         each: true,
-//       })
-//     private readonly category: string[];
-    
-//     @IsNotEmpty()
-//     @IsString()
-//     @MinLength(2)
-//     @MaxLength(50)
-//     private readonly description: string;
-
-//     //isso aqui era para ser um objeto mas ficou para depois
-//     @IsNotEmpty()
-//     @IsString()
-//     @MinLength(2)
-//     @MaxLength(50)
-//     private readonly advertiser: string[];
- 
