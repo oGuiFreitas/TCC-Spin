@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { UserDto } from './dto/user.dto';
 import { User } from 'src/schemas/user.schema';
 import {LikeProdutcDto} from './dto/likeProdutcs.dto'
-import { LoginDto } from './dto/login.dto';
+import { AuthDto } from './dto/auth.dto';
 
 import {Query as ExpressQuery} from 'express-serve-static-core'
 
@@ -52,7 +52,7 @@ export class UsersContoller {
 
     @Post('login/')
     @UsePipes(new ValidationPipe())
-    login(@Body() loginDto: LoginDto){
-        return this.userService.login(loginDto)
+    auth(@Body() authDto: AuthDto){
+        return this.userService.auth(authDto)
     };
 }

@@ -17,7 +17,6 @@ import { Photo, PhotoSchema } from 'src/schemas/photo.schema';
                 schema: ProdutcSchema,
             },
         ])
-        
     ],
     providers: [
         PhotosService

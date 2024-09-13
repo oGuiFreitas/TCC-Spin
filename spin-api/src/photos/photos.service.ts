@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {
     S3Client,
@@ -9,8 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Photo } from 'src/schemas/photo.schema';
-import { isValidId } from 'src/utils/validatorId';
-import { Produtc } from 'src/schemas/product.schema';
 
 @Injectable()
 export class PhotosService {
@@ -19,7 +17,6 @@ export class PhotosService {
 
     constructor(
         @InjectModel(Photo.name) private photoModel: Model<Photo>,
-        @InjectModel(Produtc.name) private produtcModel: Model<Produtc>,
         private configService: ConfigService,
     ) {
 
@@ -33,14 +30,12 @@ export class PhotosService {
             },
             forcePathStyle: true,
         });
-
+    }
+    async getFileUrl(key: string) {
+        return { url: `https://${this.bucketName}.s3.amazonaws.com/${key}` };
     }
 
-    async uploadSingleFile({ file, productId }: { file: Express.Multer.File, productId: string }) {
-        isValidId(productId, 'productId')
-
-        const findProduct = await this.produtcModel.findById(productId)
-        if (!findProduct) throw new HttpException("Product not found", 404)
+    async uploadSingleFile(file: Express.Multer.File) {
 
         try {
             const key = `p/${uuidv4()}`;
@@ -61,11 +56,6 @@ export class PhotosService {
             const fileUrl = (await this.getFileUrl(key)).url;
             const newPhoto = new this.photoModel({ url: fileUrl });
             const savedPhoto = await newPhoto.save();
-            await findProduct.updateOne({
-                $push: {
-                    urlPhotos: savedPhoto._id,
-                },
-            });
             return savedPhoto;
 
         } catch (error) {
@@ -73,8 +63,35 @@ export class PhotosService {
         }
     }
 
-    async getFileUrl(key: string) {
-        return { url: `https://${this.bucketName}.s3.amazonaws.com/${key}` };
-    }
+    async uploadMultipleFiles(files: Express.Multer.File[]) {
+        try {
+            const uploadedPhotos = [];
 
+            for (const file of files) {
+                const key = `p/${uuidv4()}`;
+                const command = new PutObjectCommand({
+                    Bucket: this.bucketName,
+                    Key: key,
+                    Body: file.buffer,
+                    ContentType: file.mimetype,
+                    ACL: 'public-read',
+                    Metadata: {
+                        originalName: file.originalname,
+                    },
+                });
+
+                const uploadResult = await this.client.send(command);
+
+                const fileUrl = (await this.getFileUrl(key)).url;
+                const newPhoto = new this.photoModel({ url: fileUrl });
+                const savedPhoto = await newPhoto.save();
+                uploadedPhotos.push(savedPhoto._id);
+            }
+
+            return uploadedPhotos;
+
+        } catch (error) {
+            throw new Error(`Failed to upload files: ${error.message}`);
+        }
+    }
 } 

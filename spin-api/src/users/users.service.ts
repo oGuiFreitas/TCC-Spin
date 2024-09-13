@@ -8,7 +8,7 @@ import { LikedProduct } from "src/schemas/likedProdutc.schema";
 import { LikeProdutcDto } from './dto/likeProdutcs.Dto'
 import { isValidId } from "src/utils/validatorId";
 import { hashPassword, verifyPassword } from "src/utils/password"
-import { LoginDto } from "./dto/login.dto";
+import { AuthDto } from "./dto/auth.dto";
 
 @Injectable()
 export class UsersService {
@@ -93,11 +93,11 @@ export class UsersService {
         return 'hehe'
     }
 
-    async auth(loginDto: LoginDto) {
-        const findUser = await this.userModel.findOne({ email: loginDto.email }).exec();
+    async auth(authDto: AuthDto) {
+        const findUser = await this.userModel.findOne({ email: authDto.email }).exec();
         if (!findUser) throw new HttpException('Incorrect credentials', 401);
 
-        const isMatch = await verifyPassword(loginDto.password, findUser.hashPassword);
+        const isMatch = await verifyPassword(authDto.password, findUser.hashPassword);
 
         if (!isMatch) throw new HttpException('Incorrect credentials', 401)
 

@@ -15,20 +15,20 @@ export class Produtc {
     @Prop()
     category: string[];
     
-    @Prop({ type: [{ type: mongoose.Schema.ObjectId, ref: 'Photo' }] })
-    urlPhotos?: Photo[];
-
     @Prop()
     userId: string;
-
+    
     @Prop()
     thumbnail: string;
-
+    
     @Prop()
     description: string;
-
+    
     @Prop({type:[{type: mongoose.Schema.ObjectId, ref:'Trade'}]})
     tradeProposals?: Trade[]; 
+    
+    @Prop({ type: [{ type: mongoose.Schema.ObjectId, ref: 'Photo' }] })
+    urlPhotos?: Photo[];
     
 }
 

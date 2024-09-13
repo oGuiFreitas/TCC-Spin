@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { IsString, IsNotEmpty, IsArray, IsOptional, ValidateNested } from "class-validator";
+import { IsString, IsNotEmpty, IsArray, IsOptional, ValidateNested, ArrayMinSize, ArrayMaxSize } from "class-validator";
 import { TradeDto } from "src/trade/dto/trade.dto";
 
 export class ProductDto {
@@ -29,12 +29,14 @@ export class ProductDto {
     readonly description: string;
 
     @IsOptional()
-    @ValidateNested()
+    @ValidateNested()   
     @Type(() => TradeDto)
     readonly tradeProposals: string
 
-    @IsOptional()
-    @ValidateNested()
+    @IsNotEmpty()
+    @IsArray()
+    @ArrayMinSize(1)
+    @ArrayMaxSize(5)
     readonly urlPhotos: string[]
 
 }
