@@ -35,34 +35,3 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
-
-
-
-
-@font-face {
-    font-family: 'FonteApp';
-    src: url('assets/fonts/Segoe.ttf') format('truetype');
-
-         font-weight: normal; /* ou 400 */
-         font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'FonteApp';
-    src: url('assets/fonts/SegoeSemi.ttf') format('truetype');
-    font-weight: 500; /* ou 700 */
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'FonteApp';
-    src: url('assets/fonts/SegoeBold.ttf') format('truetype');
-    font-weight: 800; /* ou 700 */
-    font-style: normal;
-  }
-
-
-  // exemplo de cores como varivel
-  :root{
-    --bg:#fff2
-}
-  .background{background-color: var(--bg);}
