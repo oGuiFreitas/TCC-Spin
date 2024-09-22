@@ -1,62 +1,39 @@
 <ion-app>
-  
   <app-menu-lateral> </app-menu-lateral>
 
-
-
-
-
   <div class="ion-page" id="main-content">
-    <ion-header style="height: 65px;">
-      <ion-toolbar class="corHeader">
-        <ion-buttons slot="start" >
-          <ion-menu-button class="estiloBtMenuLateral"></ion-menu-button>
-        </ion-buttons>
+    <app-top-nav-bars></app-top-nav-bars>
 
-  <ion-searchbar class="estiloSearch" placeholder=""></ion-searchbar>
-
-        
-
-
-      </ion-toolbar>
-    </ion-header>
-
-
-    <div class="estiloCarrocelAnuncio">
-      carrocel de anuncios
-          </div> 
+    <div class="estiloCarrocelAnuncio">carrocel de anuncioss</div>
 
     <ion-content class="ion-padding">
-   
       Tap the button in the toolbar to open the menu.
     </ion-content>
 
     <!-- botoes barra -->
-    <ion-tabs  >
+    <!-- <ion-tabs>
       <ion-tab-bar slot="bottom" class="backgroundBarra">
-        <ion-tab-button tab="home" >
-         
+        <ion-tab-button tab="home">
           <img src="assets/home.svg" />
           <ion-text>Inicio</ion-text>
         </ion-tab-button>
 
+        <ion-tab-button tab="radio"> Radio </ion-tab-button>
 
-        <ion-tab-button tab="radio">
-          Radio
-        </ion-tab-button>
-        
-        <ion-tab-button tab="radio">
-          Radio
-        </ion-tab-button>
+        <ion-tab-button tab="radio"> Radio </ion-tab-button>
 
-        <ion-tab-button tab="library">
-          Library
-        </ion-tab-button>
+        <ion-tab-button tab="library"> Library </ion-tab-button>
         <ion-tab-button tab="search">
-          <!-- <ion-icon name="search"></ion-icon> -->
-          Search
+           <ion-icon name="search"></ion-icon> -->
+          <!-- Search
         </ion-tab-button>
       </ion-tab-bar>
-    </ion-tabs>
+    </ion-tabs>  -->
+   
+
+    <app-bottom-nav-bar></app-bottom-nav-bar>
+
+   
+
   </div>
 </ion-app>
