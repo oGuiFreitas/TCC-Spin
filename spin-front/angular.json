@@ -77,7 +77,8 @@
               "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "app:build:development",
+              "disableHostCheck": true
             },
             "ci": {
               "progress": false
@@ -129,7 +130,7 @@
     "schematicCollections": [
       "@ionic/angular-toolkit"
     ],
-    "analytics": false
+    "analytics": "f891f4c1-78ed-4420-a6a2-ef99d01d4275"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

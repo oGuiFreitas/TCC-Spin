@@ -1,13 +1,11 @@
-import { Component ,EnvironmentInjector } from '@angular/core';
-import { IonApp, IonRouterOutlet, IonContent, IonLabel, IonButton, IonInput, } from '@ionic/angular/standalone';
-import { RouterModule, RouterLink } from '@angular/router'; 
+import { Component } from '@angular/core';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonInput, IonButton, IonLabel, IonContent, IonApp, IonRouterOutlet,RouterLink],
-  
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
   constructor() {}

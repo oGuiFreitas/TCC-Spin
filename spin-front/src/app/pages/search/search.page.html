@@ -1,0 +1,19 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home" text=""
+      icon="../../../assets/icons/arrow_back/arrow_back.svg"></ion-back-button>
+  </ion-buttons>
+  <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)" inputmode="search"
+    search-icon="../../../assets/icons/test/search.svg" placeholder="Pesquisar" class="searchbar-input" />
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button="true" *ngFor="let result of results" lines="none">
+      <ion-img src="../../../assets/icons/test/search.svg" />
+      <ion-label>{{ result }}</ion-label>
+      <ion-img src="../../../assets/icons/test/arrow_insert.svg" />
+    </ion-item>
+  </ion-list>
+</ion-content>

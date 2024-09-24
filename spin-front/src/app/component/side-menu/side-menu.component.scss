@@ -1,0 +1,44 @@
+ion-button {
+  --background: var(--bg-darken);
+  --background-hover: var(--bg-darken);
+  --background-activated: var(--bg-darken);
+  --background-focused: var(--bg-darken);
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+ion-item {
+  --inner-padding-top: 0;
+  --padding-top: 0;
+
+  --inner-padding-start: 0;
+  --padding-start: 0;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+.line {
+  min-height: 1.1px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 25%;
+}
+
+.align-bottom {
+  position: relative;
+  // top: 88vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-horizontal{
+  max-width: 40vw;
+}

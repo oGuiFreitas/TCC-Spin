@@ -1,0 +1,37 @@
+<app-side-menu/>
+
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" [ngClass]="{'selected': selectedTab == 'home'}">
+      <ion-img
+        [src]="selectedTab == 'home' ? '../../../assets/icons/test/home-1.svg' : '../../../assets/icons/test/home.svg'" />
+      Início
+    </ion-tab-button>
+
+    <ion-tab-button tab="trade" [ngClass]="{'selected': selectedTab == 'trade'}">
+      <ion-img
+        [src]="selectedTab == 'trade' ? '../../../assets/icons/test/wifi_protected_setup-1.svg' : '../../../assets/icons/test/wifi_protected_setup.svg'" />
+      Trocas
+    </ion-tab-button>
+
+    <ion-tab-button></ion-tab-button>
+    
+    <ion-tab-button tab="items" [ngClass]="{'selected': selectedTab == 'items'}">
+      <ion-img
+        [src]="selectedTab == 'items' ? '../../../assets/icons/test/package_2.svg' : '../../../assets/icons/test/package_2-1.svg'" />
+      Itens
+    </ion-tab-button>
+    <ion-tab-button tab="perfil" [ngClass]="{'selected': selectedTab == 'perfil'}">
+      <ion-img
+        [src]="selectedTab == 'perfil' ? '../../../assets/icons/test/account_circle-1.svg' : '../../../assets/icons/test/account_circle.svg'" />
+      Perfil
+    </ion-tab-button>
+
+    <ion-fab>
+      <ion-fab-button>
+        <ion-img src="../../../assets/icons/test/spin-loop.svg" />
+      </ion-fab-button>
+    </ion-fab>
+    
+  </ion-tab-bar>
+</ion-tabs>

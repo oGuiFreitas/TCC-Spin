@@ -1,0 +1,31 @@
+ion-toolbar {
+    --background: var(--bg-darken);
+    --color: white;
+    --min-height: 60px;
+    
+}
+
+ion-buttons{
+    padding-left: 4px;
+    gap: 2vw;
+    --background: var(--bg-darken);
+    --background-hover: var(--bg-darken);
+    --background-activated: var(--bg-darken);
+    --background-focused: var(--bg-darken);
+    
+    ion-button {
+
+        --background: var(--bg-principal);
+        --background-hover: var(--bg-principal);
+        --background-activated: var(--bg-principal);
+        --background-focused: var(--bg-principal);
+      
+        --border-radius: 16px;
+      
+        --padding-start:4vw;
+        --padding-end:72vw;
+        
+       
+    } 
+}
+  

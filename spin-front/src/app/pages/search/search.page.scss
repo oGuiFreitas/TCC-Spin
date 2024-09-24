@@ -1,0 +1,25 @@
+ion-toolbar {
+    --background: var(--bg-darken);
+    --color: white;
+    --min-height: 60px;
+
+    ion-searchbar {
+
+        --clear-button-color: var(--bg-highlight);
+        --box-shadow: none --background: var(--bg-principal);
+        --background-hover: var(--bg-principal);
+        --background-activated: var(--bg-principal);
+        --background-focused: var(--bg-principal);
+
+        --border-radius: 16px;
+
+    }   
+}
+
+ion-label {
+    margin: 0 16px;
+}
+
+ion-list {
+    padding: 0;
+}
