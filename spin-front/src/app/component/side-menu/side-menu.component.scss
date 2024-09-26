@@ -5,6 +5,7 @@ ion-button {
   --background-focused: var(--bg-darken);
   --padding-top: 10px;
   --padding-bottom: 10px;
+ 
 }
 
 ion-item {
@@ -34,11 +35,49 @@ p {
 
 .align-bottom {
   position: relative;
-  // top: 88vh;
+  top: 59vh;
   display: flex;
   flex-direction: column;
 }
 
 .logo-horizontal{
   max-width: 40vw;
+  margin-left: 14px;
 }
+
+  .configBotao {
+    width: 100%;
+    min-height: 40px;
+    color: white;
+    border-radius: 15px;
+    font-weight: 200;
+    font-size: 18px;
+    text-transform: none;
+    align-content: flex-start;
+    margin-top: 15px;
+  }
+  .containerBotoesSBar {
+    padding: 20px;
+  }
+  .configIcone {
+    font-size: 20px;
+  }
+  .textoBt {
+    width: 100%;
+    text-align: left;
+    color: black;
+    padding-left: 6px;
+    padding-top: 2px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    
+  }
+  .textoBt01 {
+    width: 100%;
+    text-align: left;
+    color: white;
+    padding-left: 6px;
+    padding-top: 2px;
+    font-weight: 400;
+   
+  }

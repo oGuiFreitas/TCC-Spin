@@ -1,18 +1,89 @@
 <div id="main-content">
   <ion-menu-toggle>
     <ion-button>
-      <ion-img src="../../../assets/icons/test/menu.svg" />
+      <ion-img src="../../../assets/icons/test/menu.svg" />  
     </ion-button>
   </ion-menu-toggle>
 </div>
 
 
 <ion-menu contentId="main-content">
+
   <ion-content class="ion-padding" scroll-y="false">
 
-<ion-img src="../../../assets/logo-horizontal.svg" class="logo-horizontal" />
+<ion-img src="../../../assets/LogoNova.svg" class="logo-horizontal" />
     
-    
+
+<ion-content
+style="display: flex; flex-direction: column"
+class="ion-padding"
+>
+
+<ion-buttons>
+  <ion-button 
+    style="background-color: #5f2587"
+    fill="clear"
+    class="configBotao"
+  >
+
+    <img src="../../../assets/icons/test/homePrenchido.svg">
+    <ion-text class="textoBt01"> Inicio </ion-text>
+  </ion-button>
+</ion-buttons>
+
+<ion-buttons>
+  <ion-button
+    style="
+      --border-radius: 15px;
+      color: #5f2587;
+      margin-top: 5px;
+      min-height: 38px;
+    "
+    fill="clear"
+    class="configBotao"
+  >
+    <img src="../../../assets/icons/test/searchPreto.svg" />
+    <ion-text class="textoBt"> Buscar </ion-text>
+  </ion-button>
+</ion-buttons>
+
+<ion-buttons>
+  <ion-button
+    style="
+      --border-radius: 15px;
+      color: #5f2587;
+      margin-top: 5px;
+      min-height: 38px;
+    "
+    fill="clear"
+    class="configBotao"
+  >
+    <img src="../../../assets/icons/test/sellPreto.svg" />
+    <ion-text class="textoBt"> Trocas </ion-text>
+  </ion-button>
+</ion-buttons>
+
+<ion-buttons>
+  <ion-button
+    style="
+      --border-radius: 15px;
+      color: #5f2587;
+      margin-top: 5px;
+      min-height: 38px;
+    "
+    fill="clear"
+    class="configBotao"
+  >
+    <img
+      src="../../../assets/icons/test/gradePreto.svg"
+      style="height: 27px; margin-right: -2px"
+    />
+    <ion-text class="textoBt"> Favoritos </ion-text>
+  </ion-button>
+</ion-buttons>
+
+
+
     <div class="align-bottom">
       <div class="line"></div>
       <ion-item lines="none">
@@ -27,4 +98,4 @@
   </div>
 
   </ion-content>
-</ion-menu>
+

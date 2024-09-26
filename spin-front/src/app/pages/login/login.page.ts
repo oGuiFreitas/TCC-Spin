@@ -7,6 +7,8 @@ import {
   IonLabel,
   IonInput,
   IonButton,
+  IonText,
+  IonButtons,
 } from '@ionic/angular/standalone';
 import { RouterLink, RouterModule } from '@angular/router';
 
@@ -25,6 +27,8 @@ import { RouterLink, RouterModule } from '@angular/router';
     IonButton,
     RouterLink,
     RouterModule,
+    IonText,
+    IonButtons,
   ]
 })
 export class LoginPage implements OnInit {

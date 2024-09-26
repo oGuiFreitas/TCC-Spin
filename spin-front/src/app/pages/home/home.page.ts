@@ -9,6 +9,9 @@ import {
 } from '@ionic/angular/standalone';
 import { TabsComponent } from 'src/app/component/tabs/tabs.component';
 import { HeaderComponent } from 'src/app/component/header/header.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AnunciosComponent } from "../../component/anuncios/anuncios.component";
+
 
 @Component({
   selector: 'app-home',
@@ -16,15 +19,17 @@ import { HeaderComponent } from 'src/app/component/header/header.component';
   styleUrls: ['./home.page.scss'],
   standalone: true,
   imports: [
-    IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar, 
-    CommonModule, 
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
     FormsModule,
     TabsComponent,
     HeaderComponent,
-  ]
+    AnunciosComponent
+],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePage implements OnInit {
 
