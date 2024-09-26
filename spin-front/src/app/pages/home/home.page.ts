@@ -6,7 +6,7 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar, IonApp } from '@ionic/angular/standalone';
-import { TabsComponent } from '../../componentes/tabs/tabs.component';
+
 import { LoginPage } from "../login/login.page";
 import { MenuLateralComponent } from "../../componentes/menu-lateral/menu-lateral.component";
 import { TopNavBarsComponent } from "../../componentes/top-nav-bars/top-nav-bars.component";
@@ -25,8 +25,7 @@ import { BottomNavBarComponent } from "../../componentes/bottom-nav-bar/bottom-n
     IonTitle,
     IonToolbar,
     CommonModule,
-    FormsModule,
-    TabsComponent, LoginPage, MenuLateralComponent, TopNavBarsComponent, BottomNavBarComponent]
+    FormsModule, LoginPage, MenuLateralComponent, TopNavBarsComponent, BottomNavBarComponent]
 })
 export class HomePage implements OnInit {
 
