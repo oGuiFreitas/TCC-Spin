@@ -12,9 +12,18 @@
   margin-left: 5px;
 }
 .estiloSearch{
-  --border-radius:15px;
-  --placeholder-font-style:'FonteApp';
  
+  --placeholder-font-style:'FonteApp';
+  --background: var(--bg-principal);
+        --background-hover: var(--bg-principal);
+        --background-activated: var(--bg-principal);
+        --background-focused: var(--bg-principal);
+      
+        --border-radius: 16px;
+      
+        --padding-start:8vw;
+        --padding-end:72vw;
+
 }
 
 

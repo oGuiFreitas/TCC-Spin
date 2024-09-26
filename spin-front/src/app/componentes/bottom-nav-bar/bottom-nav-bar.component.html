@@ -1,18 +1,48 @@
-<ion-tabs>
-  <ion-tab-bar slot="bottom" class="backgroundBarra">
-    <ion-tab-button tab="home">
-      <img src="assets/home.svg" />
-      <ion-text>Inicio</ion-text>
+
+
+  <ion-tab-bar slot="bottom" class="backgroundBarra">    
+    
+    <ion-tab-button tab="home" (click)="toggleButtonState('home')">
+      <img [src]="activeTab === 'home' ? 'assets/home.svg' : 'assets/homeContorno.svg'" class="estiloInicio" />
+      <ion-text [style.color]="activeTab === 'home' ? 'white' : '#7F5E95'">Inicio</ion-text>
     </ion-tab-button>
+    
+    <ion-tab-button 
+    tab="trocas" 
+    (click)="toggleButtonState('trocas')" 
+    [ngClass]="{'active-button': activeTab === 'trocas'}">
+    <img [src]="activeTab === 'trocas' ? 'assets/trocas.svg' : 'assets/trocasContorno.svg'" class="estiloImgBotoes"/>
+    <ion-text [style.color]="activeTab === 'trocas' ? 'white' : '#7F5E95'">Troca</ion-text>
+  </ion-tab-button>
 
-    <ion-tab-button tab="radio"> Radio </ion-tab-button>
 
-    <ion-tab-button tab="radio"> Radio </ion-tab-button>
 
-    <ion-tab-button tab="library"> Library </ion-tab-button>
-    <ion-tab-button tab="search">
-      <!-- <ion-icon name="search"></ion-icon> -->
-      Search
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+    
+  <ion-tab-button tab="spinLoop" class="estilobt"> 
+    <img src="assets/spin-loop.svg" class="imgbt"/>
+  </ion-tab-button>
+
+
+
+  <ion-tab-button 
+  tab="itens" 
+  (click)="toggleButtonState('itens')" 
+  [ngClass]="{'active-button2': activeTab === 'itens'}"> 
+  <img [src]="activeTab === 'itens' ? 'assets/itens.svg' : 'assets/itensContorno.svg'" class="estiloImgBotoes" />
+  <ion-text [style.color]="activeTab === 'itens' ? 'white' : '#7F5E95'">Itens</ion-text>
+</ion-tab-button>
+
+
+
+<ion-tab-button 
+  tab="perfil" 
+  (click)="toggleButtonState('perfil')" 
+  [ngClass]="{'active-button': activeTab === 'perfil'}">
+  <img [src]="activeTab === 'perfil' ? 'assets/perfil.svg' : 'assets/perfilContorno.svg'" class="estiloImgBotoes" />
+  <ion-text [style.color]="activeTab === 'perfil' ? 'white' : '#7F5E95'">Perfil</ion-text>
+</ion-tab-button>
+  
+
+ 
+</ion-tab-bar>
+

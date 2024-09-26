@@ -1,8 +1,37 @@
-.backgroundBarra{
-    background-color: #2E1340;
+ion-fab-button {
+  --background: var(--green);
+  --box-shadow: none;
+  --background-hover: none;
+  --color-hover: none;
+}
+
+ion-fab-button:focus {
+  animation: rotate 0.5s forwards;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
   }
-  
-  
-  :host {
-    --ion-tab-bar-background: #2E1340;
+
+  to {
+      transform: rotate(-360deg);
   }
+}
+
+
+ion-tab-bar, ion-tab-button   {
+  height: 64px;
+  background-color: var(--bg-darken);
+}
+
+
+ion-tab-button {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bg-highlight);
+}
+
+ion-tab-button.selected {
+  color: #fff;
+}

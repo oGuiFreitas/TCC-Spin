@@ -61,8 +61,21 @@
   }
 
 
-  // exemplo de cores como varivel
+// irei pensar sobre 
+  // * {
+  //   font-family: 'Segoe UI';
+  //  }
+
   :root{
-    --bg:#fff2
-}
-  .background{background-color: var(--bg);}
+    --ion-background-color: var(--bg-principal);
+      
+      --bg-principal: #F0F0F0;
+      --bg-darken: #2E1340;
+      --bg-highlight: #7F5E95;
+      --bg-details: #5F2587;
+      --green: #15693F;
+      --red: #F22727;
+      --gray: #888888
+  }
+  
+  
