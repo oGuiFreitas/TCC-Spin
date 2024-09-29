@@ -10,8 +10,7 @@ import  {
   IonMenuButton,
   IonMenuToggle,
   IonText,
-  IonButtons,
-} from "@ionic/angular/standalone";
+  IonButtons, IonFooter } from "@ionic/angular/standalone";
 
 
 @Component({
@@ -30,7 +29,8 @@ import  {
     IonItem,
     IonLabel,
     IonText,
-    IonButtons
+    IonButtons,
+    IonFooter,
   ]
 })
 export class SideMenuComponent  implements OnInit {

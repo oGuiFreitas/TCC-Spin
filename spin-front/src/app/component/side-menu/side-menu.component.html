@@ -1,4 +1,4 @@
-<div id="main-content">
+<div id="main-content" >
   <ion-menu-toggle>
     <ion-button>
       <ion-img src="../../../assets/icons/test/menu.svg" />  
@@ -7,18 +7,16 @@
 </div>
 
 
-<ion-menu contentId="main-content">
+<ion-menu contentId="main-content" >
 
-  <ion-content class="ion-padding" scroll-y="false">
+  <ion-content class="ion-padding" scroll-y="false" style="height: 100vh;">
 
 <ion-img src="../../../assets/LogoNova.svg" class="logo-horizontal" />
     
 
-<ion-content
-style="display: flex; flex-direction: column"
-class="ion-padding"
->
+<ion-content class="ion-padding">
 
+<div style="height: 80vh;" >    
 <ion-buttons>
   <ion-button 
     style="background-color: #5f2587"
@@ -81,12 +79,13 @@ class="ion-padding"
     <ion-text class="textoBt"> Favoritos </ion-text>
   </ion-button>
 </ion-buttons>
+</div>
 
 
 
-    <div class="align-bottom">
+    <div class="align-bottom" >
       <div class="line"></div>
-      <ion-item lines="none">
+      <ion-item lines="none" >
         <ion-avatar slot="start">
         <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       </ion-avatar>
@@ -97,5 +96,7 @@ class="ion-padding"
     </ion-item>
   </div>
 
+
   </ion-content>
 
+</ion-content>

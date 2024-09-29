@@ -3,12 +3,10 @@ ion-fab-button {
     --box-shadow: none;
     --background-hover: none;
     --color-hover: none;
-  
 }
 
-ion-fab-button:active{
-    animation: rotate 0.5s forwards; /* Trigger the animation on click */
-    
+ion-fab-button:focus {
+    animation: rotate 0.5s forwards;
 }
 
 @keyframes rotate {
@@ -19,8 +17,6 @@ ion-fab-button:active{
     to {
         transform: rotate(-360deg);
     }
-
-
 }
 
 
