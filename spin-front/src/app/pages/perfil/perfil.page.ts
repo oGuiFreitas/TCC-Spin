@@ -21,6 +21,7 @@ import { HeaderComponent } from 'src/app/component/header/header.component';
     IonToolbar, 
     CommonModule, 
     FormsModule,
+    HeaderComponent,
   ]
 })
 export class PerfilPage implements OnInit {
@@ -29,5 +30,7 @@ export class PerfilPage implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

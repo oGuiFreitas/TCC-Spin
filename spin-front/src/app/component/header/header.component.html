@@ -1,8 +1,36 @@
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <app-side-menu></app-side-menu>
-    <ion-button shape="round" class="search" routerLink="/search"  >
-    <ion-img src="../../../assets/icons/test/search.svg"  class="estiloimg"/>
-    </ion-button>
-  </ion-buttons>
-</ion-toolbar>
+
+
+
+@if(sideMenuWithTitle){  
+  
+    <ion-toolbar>
+      <ion-title>{{title}}</ion-title>
+      <ion-buttons slot="start">
+        <app-side-menu></app-side-menu>
+        
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <app-side-menu></app-side-menu>
+      </ion-buttons>
+      
+      
+    </ion-toolbar>
+
+
+}
+
+@if(search){
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <app-side-menu></app-side-menu>
+      <ion-button shape="round" class="search" routerLink="/search"  >
+      <ion-img src="../../../assets/icons/test/search.svg"  class="estiloimg"/>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+}
+
+
+
+

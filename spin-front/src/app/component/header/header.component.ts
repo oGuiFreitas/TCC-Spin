@@ -1,25 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SideMenuComponent } from '../side-menu/side-menu.component';
 import {
   IonButton,
   IonButtons,
   IonImg,
-  IonToolbar
-} from '@ionic/angular/standalone';
+  IonToolbar, IonText, IonHeader, IonTitle } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [
+  imports: [IonTitle, IonHeader, IonText, 
     SideMenuComponent,
     IonToolbar,
     IonButtons,
     IonButton,
     IonImg,
-    RouterLink  
+    RouterLink ,
+    IonTitle
 
   ]
 })
@@ -29,4 +30,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() { }
 
+  @Input() title!: string;
+  @Input() search!: boolean;
+  @Input() sideMenuWithTitle!: boolean;
 }

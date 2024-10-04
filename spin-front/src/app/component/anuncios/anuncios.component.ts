@@ -1,5 +1,9 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+
+import { Component, ElementRef, OnInit,ViewChild,AfterViewInit ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { SideMenuComponent } from '../side-menu/side-menu.component';
+
+
 import {
   IonButton,
   IonButtons,
@@ -7,9 +11,13 @@ import {
   IonToolbar
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
 
-import { Swiper, SwiperOptions ,SwiperModule} from 'swiper/types';
+
+import {Swiper} from 'swiper';
+import { IonicModule } from '@ionic/angular';
+
+
 
 
 @Component({
@@ -23,24 +31,51 @@ import { Swiper, SwiperOptions ,SwiperModule} from 'swiper/types';
     IonButtons,
     IonButton,
     IonImg,
-    RouterLink ,
+    RouterLink,
+    NgFor,
+    IonicModule,
+    CommonModule
     
-
+   
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AnunciosComponent  implements OnInit {
+export class AnunciosComponent implements AfterViewInit {
 
-  constructor() { }
 
-  ngOnInit() {}
 
-  config: SwiperOptions = {
-    autoplay: {
-      delay: 1000, 
-      disableOnInteraction: false 
-    },
-    loop: true
-  };
+swiper_images=[ '../../../assets/anuncioteste2.jpg',
+  '../../../assets/anuncioteste.jpg'
+]
 
+@ViewChild("swiperEx") swiperEx?: ElementRef<{swiper :Swiper}>
+
+
+  ngAfterViewInit(): void{
+register();
+  }
+
+  onSlideChange(){
+    console.log(this.swiperEx?.nativeElement.swiper.activeIndex);
+  }
+
+
+
+  constructor() {
+   
+  }
+
+
+
+  ngOnInit() {
+    
+  }
+
+
+
+
+
+
+   
 }
+

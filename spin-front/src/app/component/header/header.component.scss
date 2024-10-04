@@ -3,8 +3,14 @@ ion-toolbar {
     --color: white;
     --min-height: 60px;
     
+    
 }
 
+ion-title{
+    
+    background-color: aqua;
+   text-align: center;
+}
 ion-buttons{
     padding-left: 4px;
     gap: 2vw;
