@@ -5,16 +5,16 @@ import  {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar
-} from "@ionic/angular/standalone";
+  IonToolbar, IonList, IonItem, IonLabel, IonButton, IonIcon, IonAvatar } from "@ionic/angular/standalone";
 import { HeaderComponent } from 'src/app/component/header/header.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
   styleUrls: ['./perfil.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonAvatar, IonIcon, IonButton, IonLabel, IonItem, IonList, 
     IonContent, 
     IonHeader, 
     IonTitle, 
@@ -22,6 +22,8 @@ import { HeaderComponent } from 'src/app/component/header/header.component';
     CommonModule, 
     FormsModule,
     HeaderComponent,
+    RouterOutlet,
+    RouterLink,
   ]
 })
 export class PerfilPage implements OnInit {

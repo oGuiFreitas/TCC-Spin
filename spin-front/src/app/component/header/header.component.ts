@@ -4,7 +4,8 @@ import {
   IonButton,
   IonButtons,
   IonImg,
-  IonToolbar, IonText, IonHeader, IonTitle } from '@ionic/angular/standalone';
+  IonToolbar, IonText, IonHeader, IonTitle, 
+  IonMenuToggle} from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 
 
@@ -20,7 +21,8 @@ import { RouterLink } from '@angular/router';
     IonButton,
     IonImg,
     RouterLink ,
-    IonTitle
+    IonTitle,
+    IonMenuToggle,
 
   ]
 })

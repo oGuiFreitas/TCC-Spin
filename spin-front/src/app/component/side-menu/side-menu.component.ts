@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import  {
   IonAvatar,
   IonButton,
@@ -39,4 +39,6 @@ export class SideMenuComponent  implements OnInit {
 
   ngOnInit() {}
 
+  @Input() main_content2!: boolean;
+  @Input() main_content1!: boolean;
 }

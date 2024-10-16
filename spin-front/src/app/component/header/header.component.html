@@ -1,6 +1,6 @@
 
 
-
+<!-- header perfil -->
 @if(sideMenuWithTitle){  
   
     <ion-toolbar>
@@ -11,7 +11,12 @@
       </ion-buttons>
 
       <ion-buttons slot="end">
-        <app-side-menu></app-side-menu>
+        <div >
+       <button style="width: 42px; ">
+    
+       </button>
+        </div>
+        
       </ion-buttons>
       
       
@@ -23,7 +28,7 @@
 @if(search){
   <ion-toolbar>
     <ion-buttons slot="start">
-      <app-side-menu></app-side-menu>
+      <app-side-menu ></app-side-menu>
       <ion-button shape="round" class="search" routerLink="/search"  >
       <ion-img src="../../../assets/icons/test/search.svg"  class="estiloimg"/>
       </ion-button>

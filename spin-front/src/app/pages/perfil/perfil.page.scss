@@ -1,0 +1,34 @@
+ion-avatar{
+
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+    
+}
+
+h1{
+    font-weight: 600;
+    font-size: 20px;
+}
+h2{
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.btSairConta{
+    --background:#ff0000;
+    --border-radius:25px
+}
+.LabelMc{
+    font-size: 20px;
+    font-weight: 600;
+}
+.estCaixaPerfil{
+    height: 14vh;
+}
+.divCaixaPErfil{
+    background-color: aqua; display: flex;        
+    align-items: center;
+    width:  100vh;  
+}
